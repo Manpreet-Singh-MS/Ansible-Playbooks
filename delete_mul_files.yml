@@ -1,0 +1,12 @@
+---
+- name: This playbook will delete multiple files
+  hosts: all
+  become: true
+  tasks:
+    - name: Deleting the files
+      file:
+        path: '{{ item }}'
+        state: absent
+      with_items:
+        - /home/ubuntu/file1.txt
+        - /home/ubuntu/file2.txt
