@@ -1,0 +1,9 @@
+---
+- name: This play book will delete a directory
+  hosts: all
+  become: true
+  tasks:
+  - name: Delete a directory
+    file:
+      path: /home/ubuntu/test_dir
+      state: absent
