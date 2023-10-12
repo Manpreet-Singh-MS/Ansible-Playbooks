@@ -1,0 +1,14 @@
+---
+- name: This playbook will create 2 files
+  hosts: all
+  become: true
+  tasks:
+    - name: create file 1
+      file:
+        path: /home/ubuntu/file1.txt
+        state: touch
+
+    - name: create file 2
+      file:
+        path: /home/ubuntu/file2.txt
+        state: touch      
